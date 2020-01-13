@@ -1,18 +1,17 @@
 # -*- coding: utf-8 -*-
 
 
-def protected(fuc):
+def protected(func):
     def wrapper(password):
         if password == 'platzi':
             return func()
         else:
             print('La contaseña es incorrecta')
-
-        return wrapper
+    return wrapper
 
 
 @protected
-def protected_fuc():
+def protected_func():
     print('Tu contaseña es correcta')
 
 
@@ -20,4 +19,4 @@ def protected_fuc():
 if __name__ == '__main__':
     password = str(input('Ingresa tu contraseña: '))
 
-    protected_fuc(password)
+    protected_func(password)
